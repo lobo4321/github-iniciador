@@ -31,19 +31,19 @@ export default function Repository() {
           Voltar
         </button>
       </div>
-      <h1 className="text-6xl font-bold">{repository.data.name}</h1>
+      <h1 className="text-6xl font-bold">{repository.data?.name}</h1>
       <a
-        href={repository.data.url}
+        href={repository.data?.html_url}
         target="_blank"
         rel="noreferrer"
         className="underline text-blue-600"
       >
-        {repository.data.html_url}
+        {repository.data?.html_url}
       </a>
-      <h2>private/public: {repository.data.visibility}</h2>
-      <h2>default branch: {repository.data.default_branch}</h2>
-      <h2>forks: {repository.data.forks}</h2>
-      <h2>subscribers: {repository.data.subscribers_count}</h2>
+      <h2>private/public: {repository.data?.visibility}</h2>
+      <h2>default branch: {repository.data?.default_branch}</h2>
+      <h2>forks: {repository.data?.forks}</h2>
+      <h2>subscribers: {repository.data?.subscribers_count}</h2>
     </main>
   )
 }

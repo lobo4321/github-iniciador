@@ -1,7 +1,19 @@
 import { useQuery } from 'react-query'
 import { api } from '../services/api'
 
-async function loadRepository(username: string, repositoryTitle: string) {
+interface RepositoryDataProps {
+  name: string
+  html_url: string
+  visibility: string
+  default_branch: string
+  forks: number
+  subscribers_count: string
+}
+
+async function loadRepository(
+  username: string,
+  repositoryTitle: string,
+): Promise<RepositoryDataProps> {
   const { data } = await api.get(`/repos/${username}/${repositoryTitle}`)
 
   return data
